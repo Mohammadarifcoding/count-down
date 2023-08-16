@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class=" text-center mt-[10%] space-y-7" id="count-down ">
+
+    <h1 class="text-6xl font-semibold text-blue-950">Counter</h1>
+
+    <h1 class="text-8xl font-semibold  text-gray-800" id="countNumber">0</h1>
+    <!-- btn group -->
+    <div class="flex justify-center space-x-9">
+        <button class=" px-3 border-gray-800 text-[20px] border-[3px] hover:bg-slate-900 hover:text-white rounded text-gray-700" id="decrease" >Decrease -</button>
+        <button class="px-3 flex border-gray-800 border-[3px] text-[20px] text-gray-700 hover:bg-slate-900 hover:text-white rounded" id="reset">Reset</button>
+        <button class="px-3 border-gray-800 border-[3px] text-[20px] text-gray-700 hover:bg-slate-900 hover:text-white rounded" id="increase">Increase +</button>
+    </div>
+
+  </div>
+
+  <script>
+     let count = 0
+     
+
+document.getElementById('decrease').addEventListener('click',function () {
+ 
+  let countNumber = document.getElementById('countNumber')
+  count--
+  countNumber.innerText = count
+  let h1 = document.getElementById('countNumber')
+if(count > 0){
+  h1.style.color = "green"
+}
+else if(count < 0){
+ h1.style.color = "red"
+}
+else if(count == 0){
+  h1.style.color = "rgb(17 ,24 ,39)"
+}
+
+})
+   
+document.getElementById('increase').addEventListener('click',function () {
+ 
+  let countNumber = document.getElementById('countNumber')
+  count++
+  countNumber.innerText = count
+  let h1 = document.getElementById('countNumber')
+if(count > 0){
+  h1.style.color = "green"
+}
+else if(count < 0){
+ h1.style.color = "red"
+}
+else if(count == 0){
+  h1.style.color = "rgb(17, 24 ,39)"
+}
+
+})
+
+document.getElementById('reset').addEventListener('click',function () {
+ count = 0
+ let countNumber = document.getElementById('countNumber')
+
+ countNumber.innerText = count
+ let h1 = document.getElementById('countNumber')
+ h1.style.color = 'rgb(17, 24, 39)'
+
+})
+
+
+
+  </script>
+</body>
+</html>
